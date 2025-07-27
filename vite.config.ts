@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // 👇 IMPORTANT: Keep base as empty string for GitHub user pages
 export default defineConfig(({ mode }) => ({
-  base: '/gokulkrishnan-m.github.io/',
+  base: '/',
   server: {
     host: "::",
     port: 8080,
