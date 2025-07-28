@@ -41,6 +41,27 @@ export const HeroSection = () => {
     };
   }, []);
 
+  const exploreTargets = ['projects', 'about', 'contact', 'skills'];
+
+  function getRandomSection(current: string | null) {
+    const filtered = exploreTargets.filter(id => id !== current);
+    return filtered[Math.floor(Math.random() * filtered.length)];
+  }
+
+  const [lastSection, setLastSection] = useState<string | null>(null);
+
+  const handleExploreClick = () => {
+    let target: string;
+    if (!lastSection) {
+      target = 'projects'; // First click always goes to projects
+    } else {
+      target = getRandomSection(lastSection);
+    }
+    setLastSection(target);
+    const el = document.getElementById(target);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
@@ -122,6 +143,7 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 className="glass hover-glow bg-gradient-primary text-primary-foreground hover:scale-105 transition-all duration-300 px-8 py-4 text-lg"
+                onClick={handleExploreClick}
               >
                 Explore Portfolio
               </Button>
