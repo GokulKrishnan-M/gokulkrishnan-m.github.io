@@ -154,7 +154,7 @@ export const HeroSection = () => {
                 asChild
               >
                 <a
-                  href="/PDF/Gokul Krishnan M - CV.pdf"
+                  href="/PDF/Gokul Krishnan M - CV_.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download
